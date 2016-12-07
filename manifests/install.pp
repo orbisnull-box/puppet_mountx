@@ -14,6 +14,7 @@ class orbisnull_mountx::install inherits orbisnull_mountx {
     notify{"mount point: ${mount}":}
     $mount_name = $mount[dest]
     mounts { $mount_name:
+      ensure => $mount[ensure],
       source => $mount[source],
       dest   => $mount[dest],
       type   => $mount[typefs],
